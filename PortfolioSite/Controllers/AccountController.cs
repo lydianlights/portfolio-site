@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioSite.Models.Identity;
 using PortfolioSite.Data;
+using PortfolioSite.ViewModels.Account;
 
 namespace PortfolioSite.Controllers
 {
@@ -39,5 +40,45 @@ namespace PortfolioSite.Controllers
         {
             return PartialView("_RegisterForm");
         }
+
+        [HttpPost, Route("/admin/login")]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost, Route("/admin/register")]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            var newUser = new ApplicationUser {
+                UserName = model.Email,
+                Email = model.Email
+            };
+            if (model.Password == model.ConfirmPassword)
+            {
+                var result = await _userManager.CreateAsync(newUser, model.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> LogOff()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
