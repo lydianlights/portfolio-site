@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.SiteTitle = "Rane's Code Blog";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/master.css" />
+  <title>
+    @(ViewBag.PageTitle != null ? $"{ViewBag.PageTitle} - {ViewBag.SiteTitle}" : ViewBag.SiteTitle)
+  </title>
+</head>
+<body>
+  <div class="page-header">
+    @Html.Partial("SiteHeader")
+  </div>
+  <div class="content-container">
+    <div class="page-body">
+      @RenderBody()
+    </div>
+    <div class="page-footer">
+      @Html.Partial("SiteFooter")
+    </div>
+  </div>
+</body>
+</html>
