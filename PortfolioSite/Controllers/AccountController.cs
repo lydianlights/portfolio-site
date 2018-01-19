@@ -28,11 +28,13 @@ namespace PortfolioSite.Controllers
             return View();
         }
 
+        [Route("/admin/loginform")]
         public IActionResult LoginForm()
         {
             return PartialView("_LoginForm");
         }
 
+        [Route("/admin/registerform")]
         public IActionResult RegisterForm()
         {
             return PartialView("_RegisterForm");
