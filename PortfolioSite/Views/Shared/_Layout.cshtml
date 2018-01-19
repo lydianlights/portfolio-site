@@ -3,7 +3,6 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta name="viewport" content="width=device-width" />
@@ -14,14 +13,14 @@
 </head>
 <body>
   <div class="page-header">
-    @Html.Partial("SiteHeader")
+    @Html.Partial("_SiteHeader")
   </div>
   <div class="content-container">
     <div class="page-body">
       @RenderBody()
     </div>
     <div class="page-footer">
-      @Html.Partial("SiteFooter")
+      @Html.Partial("_SiteFooter")
     </div>
   </div>
 </body>
