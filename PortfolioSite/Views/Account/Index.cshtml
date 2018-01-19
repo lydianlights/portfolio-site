@@ -1,0 +1,37 @@
+﻿@{
+  ViewBag.PageTitle = "Account Management";
+  Layout = "_Layout";
+}
+
+<div id="account-section" class="content-section">
+  <h1>Account Management</h1>
+  <div id="login-widgit">
+    <a id="login-button" class="btn">Login</a>
+    <a id="register-button" class="btn">Register</a>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#login-button").click(function() {
+      $.ajax({
+        type: 'GET',
+        dataType: 'html',
+        url: '@Url.Action("LoginForm")',
+        success: function(result) {
+          $('#login-widgit').html(result);
+        }
+      });
+    })
+    $("#register-button").click(function() {
+      $.ajax({
+        type: 'GET',
+        dataType: 'html',
+        url: '@Url.Action("RegisterForm")',
+        success: function(result) {
+          $('#login-widgit').html(result);
+        }
+      });
+    })
+  });
+</script>
