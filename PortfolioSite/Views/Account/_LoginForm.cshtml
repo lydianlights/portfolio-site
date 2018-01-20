@@ -1,7 +1,7 @@
 ﻿@model PortfolioSite.ViewModels.Account.LoginViewModel
 
 <h1>Log In</h1>
-@using (Html.BeginForm("LogIn", "Account", FormMethod.Post))
+@using (Html.BeginForm("LogIn", "Account"))
 {
   <div class="form-group">
     @Html.LabelFor(m => m.Email)

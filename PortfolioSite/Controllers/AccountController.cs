@@ -43,7 +43,7 @@ namespace PortfolioSite.Controllers
         }
 
         [HttpPost, Route("/admin/login")]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> LogIn(LoginViewModel model)
         {
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
             if (result.Succeeded)
@@ -72,7 +72,7 @@ namespace PortfolioSite.Controllers
                         Email = model.Email,
                         Password = model.Password
                     };
-                    return await Login(loginModel);
+                    return await LogIn(loginModel);
                 }
             }
             return RedirectToAction("Index");
