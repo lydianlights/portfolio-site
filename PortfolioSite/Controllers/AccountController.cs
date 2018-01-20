@@ -68,7 +68,11 @@ namespace PortfolioSite.Controllers
                 var result = await _userManager.CreateAsync(newUser, model.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    var loginModel = new LoginViewModel {
+                        Email = model.Email,
+                        Password = model.Password
+                    };
+                    return await Login(loginModel);
                 }
             }
             return RedirectToAction("Index");
