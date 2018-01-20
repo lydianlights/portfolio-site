@@ -74,14 +74,14 @@ namespace PortfolioSite.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
+        [HttpPost, Route("/admin/logoff")]
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpPost]
+        [HttpPost, Route("/admin/remove")]
         public async Task<IActionResult> Remove(string userId)
         {
             var user = _db.Users.FirstOrDefault(u => u.Id == userId);
