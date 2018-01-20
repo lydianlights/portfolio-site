@@ -26,7 +26,8 @@ namespace PortfolioSite.Controllers
         [Route("/admin")]
         public IActionResult Index()
         {
-            return View();
+            List<ApplicationUser> model = _db.Users.ToList();
+            return View(model);
         }
 
         [Route("/admin/loginform")]
@@ -78,6 +79,14 @@ namespace PortfolioSite.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Remove(string userId)
+        {
+            var user = _db.Users.FirstOrDefault(u => u.Id == userId);
+            var result = await _userManager.DeleteAsync(user);
+            return RedirectToAction("Index");
         }
     }
 }

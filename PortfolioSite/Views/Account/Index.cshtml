@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<PortfolioSite.Models.Identity.ApplicationUser>
+
+@{
   ViewBag.PageTitle = "Account Management";
   Layout = "_Layout";
 }
@@ -9,6 +11,25 @@
     <a id="login-button" class="btn">Login</a>
     <a id="register-button" class="btn">Register</a>
   </div>
+  <h1>Admin Accounts</h1>
+  @if(Model != null && Model.Count > 0)
+  {
+    @foreach(var user in Model)
+    {
+      <p>
+        @user.UserName | 
+        @using (Html.BeginForm("Remove", "Account"))
+        {
+          @Html.Hidden("userId", user.Id)
+          <input type="submit" class="btn" value="Delete" />
+        }
+      </p>
+    }
+  }
+  else
+  {
+    <p>No admin accounts exist.</p>
+  }
 </div>
 
 <script>
