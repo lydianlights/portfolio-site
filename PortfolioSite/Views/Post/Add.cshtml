@@ -1,0 +1,22 @@
+﻿@using PortfolioSite.Models
+@model BlogPost
+
+@{
+  ViewBag.PageTitle = "Blog";
+  Layout = "_Layout";
+}
+
+<div id="blog-section" class="content-section">
+  @using (Html.BeginForm())
+  {
+    <div class="form-group">
+      @Html.LabelFor(m => m.Title, "Title")
+      @Html.TextBoxFor(m => m.Title)
+    </div>
+    <div class="form-group">
+      @Html.LabelFor(m => m.Content, "Post")
+      @Html.TextAreaFor(m => m.Content)
+    </div>
+    <input type="submit" class="btn" value="Submit" />
+  }
+</div>

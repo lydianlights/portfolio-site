@@ -1,0 +1,13 @@
+﻿@using PortfolioSite.Models
+@model BlogPost
+
+@{
+  ViewBag.PageTitle = "Blog";
+  Layout = "_Layout";
+}
+
+<div id="blog-section" class="content-section">
+  <h1>@Model.Title</h1>
+  <div>@Model.Content</div>
+  @Html.ActionLink("Back", "Index")
+</div>

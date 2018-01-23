@@ -1,0 +1,22 @@
+﻿@using PortfolioSite.Models
+@model List<BlogPost>
+
+@{
+  ViewBag.PageTitle = "Blog";
+  Layout = "_Layout";
+}
+
+<div id="blog-section" class="content-section">
+  <h1>Posts</h1>
+  @if (Model != null && Model.Count > 0)
+  {
+      @foreach (BlogPost post in Model)
+      {
+        <p><a href=@Url.Action("GetPost", new { postId = post.Id })>@post.Title</a></p>
+      }
+  }
+  else
+  {
+    <p>No blog posts available...</p>
+  }
+</div>
