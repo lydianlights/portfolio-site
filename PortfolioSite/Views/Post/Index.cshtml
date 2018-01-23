@@ -12,7 +12,7 @@
   {
       @foreach (BlogPost post in Model)
       {
-        <p><a href=@Url.Action("GetPost", new { postId = post.Id })>@post.Title</a></p>
+        <p><a href=@Url.Action("PostDetails", new { postId = post.Id })>@post.Title</a></p>
       }
   }
   else

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioSite.Data;
+using PortfolioSite.Models;
+using PortfolioSite.ViewModels.Post;
 
 namespace PortfolioSite.Controllers
 {
@@ -17,16 +19,13 @@ namespace PortfolioSite.Controllers
             _db = db;
         }
 
-        [Route("/posts/{postId}/comments")]
-        public IActionResult GetCommentsForPost(int postId)
-        {
-            return View();
-        }
-
         [HttpPost, Route("/posts/{postId}/comments/add")]
-        public IActionResult AddCommentToPost(int postId)
+        public IActionResult AddCommentToPost(PostDetailsViewModel model)
         {
-            return View();
+            model.NewComment.ParentBlogPost = _db.BlogPosts.FirstOrDefault(p => p.Id == model.NewComment.ParentBlogPost.Id);
+            _db.BlogPostComments.Add(model.NewComment);
+            _db.SaveChanges();
+            return RedirectToAction("PostDetails", "Post", new { model.NewComment.ParentBlogPost.Id });
         }
     }
 }

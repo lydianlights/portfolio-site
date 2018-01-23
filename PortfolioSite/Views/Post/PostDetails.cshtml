@@ -1,0 +1,46 @@
+﻿@using PortfolioSite.Models
+@using PortfolioSite.ViewModels.Post
+@model PostDetailsViewModel
+
+@{
+  ViewBag.PageTitle = "Blog";
+  Layout = "_Layout";
+}
+
+<div id="blog-section" class="content-section">
+  <h1>@Model.ThisPost.Title</h1>
+  <div>@Model.ThisPost.Content</div>
+  @Html.ActionLink("Back", "Index")
+  <h2>Comments</h2>
+
+  @using (Html.BeginForm("AddCommentToPost", "Comment"))
+  {
+    Model.NewComment.ParentBlogPost = Model.ThisPost;
+    @Html.HiddenFor(m => m.NewComment.ParentBlogPost.Id)
+
+    <div class="form-group">
+      @Html.LabelFor(m => m.NewComment.Author, "Your Email")
+      @Html.TextBoxFor(m => m.NewComment.Author)
+    </div>
+    <div class="form-group">
+      @Html.LabelFor(m => m.NewComment.Body, "Comment")
+      @Html.TextAreaFor(m => m.NewComment.Body)
+    </div>
+    <input type="submit" class="btn" value="Post" />
+  }
+  <hr />
+
+  @if (Model.ThisPost.Comments != null && Model.ThisPost.Comments.Count > 0)
+  {
+    @foreach (BlogPostComment comment in Model.ThisPost.Comments)
+    {
+      <p>@comment.Author</p>
+      <div>@comment.Body</div>
+      <hr />
+    }
+  }
+  else
+  {
+    <p>No comments...</p>
+  }
+</div>

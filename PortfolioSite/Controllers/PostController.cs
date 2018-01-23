@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PortfolioSite.Data;
 using PortfolioSite.Models;
+using PortfolioSite.ViewModels.Post;
 
 namespace PortfolioSite.Controllers
 {
@@ -26,9 +28,12 @@ namespace PortfolioSite.Controllers
         }
 
         [Route("/posts/{postId}")]
-        public IActionResult GetPost(int postId)
+        public IActionResult PostDetails(int postId)
         {
-            BlogPost model = _db.BlogPosts.FirstOrDefault(m => m.Id == postId);
+            var model = new PostDetailsViewModel();
+            model.ThisPost = _db.BlogPosts
+                .Include(m => m.Comments)
+                .FirstOrDefault(m => m.Id == postId);
             return View(model);
         }
 
