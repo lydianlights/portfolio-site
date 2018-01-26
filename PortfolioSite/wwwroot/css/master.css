@@ -6,7 +6,8 @@ body {
   position: fixed;
   display: flex;
   width: 100%;
-  font-size: 20px; }
+  font-size: 20px;
+  font-weight: bold; }
   .main-nav a {
     margin: 20px 20px; }
 
@@ -24,17 +25,37 @@ body {
   .jumbotron .social-media-icons {
     margin-top: 50px; }
 
+.content-container {
+  max-width: 1000px;
+  margin: auto; }
+
+.page-section {
+  padding: 0px 30px; }
+  .page-section h1 {
+    text-align: center;
+    font-size: 50px; }
+  .page-section .section-content h2 {
+    font-size: 32px; }
+  .page-section .section-content p {
+    font-size: 18px;
+    line-height: 32px; }
+
+#about-section-content {
+  max-width: 700px;
+  margin: auto; }
+
 body {
   background-color: #16161c;
   font-family: "Segoe UI", sans-serif;
-  color: white; }
+  color: #cfd5d6; }
 
 a {
   color: #bcde72;
   text-decoration: none; }
 
 .main-nav {
-  background-color: #16161c; }
+  background-color: black; }
 
 .jumbotron {
+  color: white;
   background-color: black; }

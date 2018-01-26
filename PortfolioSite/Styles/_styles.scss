@@ -12,12 +12,12 @@ a {
   text-decoration: none;
 }
 
-// TODO: pick color
 .main-nav {
-  background-color: $bg-color;
+  background-color: $main-nav-color;
 }
 
 // TODO: jumbotron image
 .jumbotron {
-  background-color: black;
+  color: $title-font-color;
+  background-color: $main-nav-color;
 }

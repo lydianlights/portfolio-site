@@ -8,6 +8,7 @@
   display: flex;
   width: 100%;
   font-size: 20px;
+  font-weight: bold;
   a {
     margin: 20px 20px;
   }
@@ -32,4 +33,31 @@
   .social-media-icons {
     margin-top: 50px;
   }
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.page-section {
+  padding: 0px 30px;
+  h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+  .section-content {
+    h2 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+}
+
+#about-section-content {
+  max-width: 700px;
+  margin: auto;
 }
