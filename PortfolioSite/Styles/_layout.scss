@@ -1,0 +1,31 @@
+﻿body {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.page-header {
+  nav {
+
+  }
+}
+
+.jumbotron {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    margin: 0px;
+    font-size: 80px;
+  }
+
+  p {
+    margin: 0px;
+  }
+
+  .social-media-icons {
+    margin-top: 50px;
+  }
+}

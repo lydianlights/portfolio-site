@@ -1,0 +1,18 @@
+﻿@import "_fonts.scss";
+@import "_style-vars.scss";
+
+body {
+  background-color: $bg-color;
+  font-family: "Segoe UI", sans-serif;
+  color: $font-color;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+// TODO: jumbotron image
+.jumbotron {
+  background-color: black;
+}
