@@ -16,6 +16,17 @@ namespace PortfolioSiteTests.DataTests
         {
             List<Repo> results = await GithubApiContext.GetMyTop3StarredAsync();
 
+            // Log the top 3 results since they are potentially hard to directly test
+            foreach (Repo repo in results)
+            {
+                Console.WriteLine($"Repo: {repo.Name}");
+                Console.WriteLine($"URL: {repo.Html_Url}");
+                Console.WriteLine($"Updated: {repo.Updated_At}");
+                Console.WriteLine($"Language: {repo.Language}");
+                Console.WriteLine($"Stars: {repo.Stargazers_Count}");
+                Console.WriteLine("");
+            }
+
             Assert.AreEqual(3, results.Count);
         }
     }
