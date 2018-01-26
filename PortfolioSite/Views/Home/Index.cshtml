@@ -1,5 +1,8 @@
-﻿@{
-    Layout = "_Layout";
+﻿@using PortfolioSite.Models
+@model List<Repo>
+
+@{
+  Layout = "_Layout";
 }
 
 <div id="about-section" class="page-section">
@@ -7,7 +10,7 @@
 </div>
 
 <div id="projects-section" class="page-section">
-  @Html.Partial("_Projects")
+  @Html.Partial("_Projects", Model)
 </div>
 
 <div id="contact-section" class="page-section">

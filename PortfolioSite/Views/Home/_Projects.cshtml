@@ -1,17 +1,20 @@
-﻿@*@using PortfolioSite.Models
-@model Repo*@
+﻿@using PortfolioSite.Models
+@model List<Repo>
 
 <h1>Projects</h1>
 <p>Here are some of my most poular GitHub repos:</p>
 
 <div class="project-panels">
-  <a href="#">
-    <div class="project-panel">
-      <p class="project-name">SAMPLE NAME</p>
-      <p class="project-language">Javascript</p>
-      <div class="project-stars">Stars</div>
-      <p class="project-last-update"></p>
-      <p class="project-link">Click for more info</p>
-    </div>
-  </a>
+  @foreach (Repo repo in Model)
+  {
+    <a href="@repo.Html_Url">
+      <div class="project-panel">
+        <p class="project-name">@repo.Name</p>
+        <p class="project-language">Language: @repo.Language</p>
+        <div class="project-stars">Stars: @repo.Stargazers_Count</div>
+        <p class="project-last-update">Last Updated: @repo.Updated_At</p>
+        <p class="project-link">Click for more info</p>
+      </div>
+    </a>
+  }
 </div>
