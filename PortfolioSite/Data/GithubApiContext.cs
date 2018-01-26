@@ -27,7 +27,7 @@ namespace PortfolioSite.Data
 
             var response = await GetResponseAsync(client, request) as RestResponse;
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-            IQueryable<Repo> repoResults = JsonConvert.DeserializeObject<IQueryable<Repo>>(jsonResponse["items"].ToString());
+            IQueryable<Repo> repoResults = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse["items"].ToString()).AsQueryable();
 
             List<Repo> top3Repos = repoResults.Take(3).ToList();
             return top3Repos;
