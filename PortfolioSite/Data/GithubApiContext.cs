@@ -21,6 +21,7 @@ namespace PortfolioSite.Data
             var client = new RestClient(apiUrl);
             var request = new RestRequest("/search/repositories", Method.GET);
             request.AddHeader("Accept", acceptHeader);
+            request.AddHeader("User-Agent", myUserName);
             request.AddParameter("q", $"user:{myUserName} fork:true");
             request.AddParameter("sort", "stars");
             request.AddParameter("order", "desc");
