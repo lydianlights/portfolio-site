@@ -44,22 +44,17 @@ body {
 
 .page-section {
   padding: 0px 30px;
+  max-width: 700px;
+  margin: auto;
   h1 {
     text-align: center;
     font-size: 50px;
   }
-  .section-content {
-    h2 {
-      font-size: 32px;
-    }
-    p {
-      font-size: 18px;
-      line-height: 32px;
-    }
+  h2 {
+    font-size: 32px;
   }
-}
-
-#about-section-content {
-  max-width: 700px;
-  margin: auto;
+  p {
+    font-size: 18px;
+    line-height: 32px;
+  }
 }
