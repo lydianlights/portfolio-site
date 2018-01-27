@@ -53,7 +53,6 @@ body {
     flex-direction: column;
     padding: 35px 15px 20px;
     margin: 20px 6px 20px;
-    background-color: dimgrey;
     border-radius: 2px; }
     .project-panels .project-panel p {
       margin: 0px;
@@ -67,7 +66,6 @@ body {
       padding: 8px 10px;
       max-width: 85%;
       font-size: 22px;
-      background-color: black;
       border-radius: 3px; }
     .project-panels .project-panel .project-link {
       margin-top: 40px;
@@ -91,3 +89,12 @@ a {
 
 .project-panels a {
   color: #cfd5d6; }
+
+.project-panels .project-panel {
+  background-color: #26282d; }
+
+.project-panels .project-name {
+  background-color: black; }
+
+.project-panels .project-link {
+  color: #bcde72; }

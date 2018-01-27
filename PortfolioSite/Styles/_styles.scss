@@ -26,4 +26,13 @@ a {
   a {
     color: $font-color;
   }
+  .project-panel {
+    background-color: $panel-bg-color;
+  }
+  .project-name {
+    background-color: $panel-header-bg-color;
+  }
+  .project-link {
+    color: $link-color;
+  }
 }
