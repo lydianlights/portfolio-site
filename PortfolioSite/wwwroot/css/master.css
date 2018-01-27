@@ -4,6 +4,7 @@ body {
 
 .main-nav {
   position: fixed;
+  z-index: 100;
   display: flex;
   width: 100%;
   font-size: 20px;
