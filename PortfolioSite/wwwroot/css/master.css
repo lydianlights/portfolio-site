@@ -69,6 +69,7 @@ body {
       background-color: black;
       border-radius: 3px; }
     .project-panels .project-panel .project-link {
+      font-weight: bold;
       margin-top: 20px;
       align-self: center; }
 
