@@ -13,6 +13,7 @@
 * Open the main project directory `./PortfolioSite` using terminal or powershell.
 * Run `$ dotnet restore` to fetch the project dependencies.
 * Run `$ npm install` to fetch the project node packages.
+* Run `$ npm install gulp -g` install gulp.
 * Run `$ dotnet ef database update --context ApplicationDbContext` to build the project database.
 * Run `$ dotnet run` to start the server.
 
@@ -20,6 +21,8 @@
 
 * This project is powered by [ASP .NET Core v1.1.2](https://docs.microsoft.com/en-us/aspnet/core/).
 * This project uses [Entity Framework Core v1.1.2](https://github.com/aspnet/EntityFrameworkCore) as an ORM database manager.
+* This project depends on NodeJs
+* This project uses Gulp as a build manager
 
 ## Known Bugs
 
