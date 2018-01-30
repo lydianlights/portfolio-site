@@ -7,7 +7,7 @@
 ## Setup/Installation Requirements
 
 * Clone/download the project
-* Install `.NET Core 1.1`. You can get it  [here](https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.1.4-download.md).
+* Install `.NET Core 1.1.2`. You can get it  [here](https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.1.2-download.md).
 * A mySQL server is required for this project. If you have no mySQL server environment on your computer, you can get MAMP [here](https://www.mamp.info/en/downloads/).
 * Configure your server to listen on port 8889 and start it.
 * Open the main project directory `./PortfolioSite` using terminal or powershell.
@@ -21,12 +21,13 @@
 
 * This project is powered by [ASP .NET Core v1.1.2](https://docs.microsoft.com/en-us/aspnet/core/).
 * This project uses [Entity Framework Core v1.1.2](https://github.com/aspnet/EntityFrameworkCore) as an ORM database manager.
-* This project depends on NodeJs
-* This project uses Gulp as a build manager
+* This project depends on [NodeJs](https://nodejs.org/en/)
+* This project uses [Gulp](https://gulpjs.com/) as a build manager
 
 ## Known Bugs
 
 * Project is missing styling for some sections
-* Admin page allows anyone to add themself
+* Admin page allows anyone to add themself as admin
+* Password fields aren't passworded
 
 Copyright (c) 2018 **_Rane Fields_**
